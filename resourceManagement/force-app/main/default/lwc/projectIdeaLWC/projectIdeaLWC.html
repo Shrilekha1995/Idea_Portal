@@ -1,0 +1,40 @@
+<template>
+        <lightning-card title='Create Project Idea'>
+        
+
+        <lightning-card>
+                <template if:true={createflag}>
+                <lightning-button label="Create New Idea" onclick={onCreate}></lightning-button>
+                </template>
+        </lightning-card>
+        <template if:true={flag}>    
+                
+        
+        <lightning-record-form
+        object-api-name='Project_Idea__c'
+        fields={fields}
+        onsuccess={handleSuccess}>
+        </lightning-record-form>
+           </template>
+           <template if:true={uploadbutton}>
+              <lightning-button label="Upload document" onclick={uploadDocument}></lightning-button>
+              <lightning-button label="Cancel"  onclick={cancel}></lightning-button>
+           </template>
+                </lightning-card>
+                <template if:true={fileflag}>
+                <lightning-card  icon-name="custom:custom19">
+                        <lightning-file-upload
+                            label="Attach receipt"
+                            name="fileUploader"
+                            accept={acceptedFormats}
+                            record-id={recordId}
+                            onuploadfinished={handleUploadFinished}
+                            multiple>
+                    </lightning-file-upload>
+                    </lightning-card>
+                    </template>
+        
+
+
+</template>
+    

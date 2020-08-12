@@ -1,0 +1,11 @@
+<template>
+    <div class="container">
+        <template for:each={employees} for:item="employee">
+            <c-tile 
+                key={employee.fields.Id.value} 
+                product={employee} 
+                ontileclick={handleTileClick}>
+            </c-tile>
+        </template>
+    </div>
+</template>

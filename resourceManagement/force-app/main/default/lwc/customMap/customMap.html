@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-m-around_medium">
+        <h1 class="slds-text-heading_small"></h1>
+     <b>   <p class="slds-text-body_regular">Project Ideas Anaysis according to different location</p></b>
+    </div>
+
+    <b><p>Selected Marker Value is {selectedMarkerValue}</p></b>
+    <lightning-map
+        map-markers={arrlist}
+        markers-title={markersTitle}
+        onmarkerselect={handleMarkerSelect}
+        selected-marker-value={selectedMarkerValue} >
+    </lightning-map>
+</template>
